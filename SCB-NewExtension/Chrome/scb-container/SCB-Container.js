@@ -82,7 +82,7 @@ function addEventHandlers() {
             setElementColors(changes["selectedColor"].newValue);
         }
     });
-    
+
     var submitCB = document.getElementById("submitCB");
     submitCB.addEventListener("focus", function () {
         var submitCB = document.getElementById("submitCB");
@@ -365,6 +365,9 @@ function createCommentBox(commentId, timestamp, content, userNameString, voteNum
     reportLinkA.href = "#";
     reportLinkA.setAttribute('data-localize', 'report');
     reportLinkA.innerText = "report";
+    reportLinkA.addEventListener("click", function(){
+        reportLinkA.innerHTML = "Thanks!"
+    })
 
     voteArea.classList.add('voteArea');
 
@@ -416,7 +419,7 @@ function setElementColors(color) {
                 b[j].style.borderColor = color;
                 b[j].style.borderRadius = "3px";
             }
-            
+
             // Change color for button:
             if(b[j].selectorText === "button") {
                 b[j].style.backgroundColor = "#fff";
@@ -431,7 +434,7 @@ function setElementColors(color) {
                 b[j].style.backgroundColor = color;
                 b[j].style.color = "#fff";
             }
-            
+
             // Change text color for these areas:
             if(b[j].selectorText === "#pollBttns button" ||
                b[j].selectorText === "#pollButtonArea") {
